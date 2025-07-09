@@ -1,0 +1,273 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Alice Amministratrice",
+      "email": "admin@example.com",
+      "password": "admin123",
+      "role": "admin",
+      "joinedEvents": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        7
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Mario Rossi",
+      "email": "mario@example.com",
+      "password": "mario123",
+      "role": "user",
+      "joinedEvents": [
+        8,
+        9,
+        10,
+        14,
+        15,
+        18,
+        19,
+        20,
+        1
+      ]
+    },
+    {
+      "id": "ae55",
+      "name": "Emanuele Giovanni Bachetti",
+      "email": "manu_7000@gmail.com",
+      "password": "test1234",
+      "role": "user",
+      "joinedEvents": []
+    },
+    {
+      "id": "713f",
+      "name": "Giovanni",
+      "email": "gio@gmail.com",
+      "password": "giovanni123",
+      "role": "user",
+      "joinedEvents": []
+    },
+    {
+      "id": "8046",
+      "name": "Test",
+      "email": "test@gmail.com",
+      "password": "test123",
+      "role": "user",
+      "joinedEvents": []
+    }
+  ],
+  "events": [
+    {
+      "id": "1",
+      "title": "React Workshop",
+      "description": "A professional event about React Workshop",
+      "date": "2025-11-06T00:00:00",
+      "location": "Bologna",
+      "price": 101.15,
+      "organizerId": 1,
+      "image": "https://picsum.photos/seed/event1/400/200"
+    },
+    {
+      "id": "3",
+      "title": "Startup Meetup",
+      "description": "A professional event about Startup Meetup",
+      "date": "2025-12-11T00:00:00",
+      "location": "Bologna",
+      "price": 77.03,
+      "organizerId": 2,
+      "image": "https://picsum.photos/seed/event3/400/200"
+    },
+    {
+      "id": "4",
+      "title": "Design Sprint",
+      "description": "A professional event about Design Sprint",
+      "date": "2025-11-18T00:00:00",
+      "location": "Bologna",
+      "price": 145.35,
+      "organizerId": 2,
+      "image": "https://picsum.photos/seed/event4/400/200"
+    },
+    {
+      "id": "5",
+      "title": "Cybersecurity Bootcamp",
+      "description": "A professional event about Cybersecurity Bootcamp",
+      "date": "2025-07-20T00:00:00",
+      "location": "Bologna",
+      "price": 16.6,
+      "organizerId": 1,
+      "image": "https://picsum.photos/seed/event5/400/200"
+    },
+    {
+      "id": "6",
+      "title": "Data Science Seminar",
+      "description": "A professional event about Data Science Seminar",
+      "date": "2025-08-25T00:00:00",
+      "location": "Florence",
+      "price": 35.28,
+      "organizerId": 1,
+      "image": "https://picsum.photos/seed/event6/400/200"
+    },
+    {
+      "id": "7",
+      "title": "Cloud Expo",
+      "description": "A professional event about Cloud Expo",
+      "date": "2025-08-02T00:00:00",
+      "location": "Milan",
+      "price": 84.66,
+      "organizerId": 3,
+      "image": "https://picsum.photos/seed/event7/400/200"
+    },
+    {
+      "id": "8",
+      "title": "Blockchain Hackathon",
+      "description": "A professional event about Blockchain Hackathon",
+      "date": "2025-10-24T00:00:00",
+      "location": "Turin",
+      "price": 137.42,
+      "organizerId": 1,
+      "image": "https://picsum.photos/seed/event8/400/200"
+    },
+    {
+      "id": "9",
+      "title": "UX/UI Design Day",
+      "description": "A professional event about UX/UI Design Day",
+      "date": "2025-10-26T00:00:00",
+      "location": "Turin",
+      "price": 183.3,
+      "organizerId": 1,
+      "image": "https://picsum.photos/seed/event9/400/200"
+    },
+    {
+      "id": "10",
+      "title": "DevOps Training",
+      "description": "A professional event about DevOps Training",
+      "date": "2025-12-02T00:00:00",
+      "location": "Florence",
+      "price": 100.65,
+      "organizerId": 1,
+      "image": "https://picsum.photos/seed/event10/400/200"
+    },
+    {
+      "id": "11",
+      "title": "Frontend Fest",
+      "description": "A professional event about Frontend Fest",
+      "date": "2025-09-15T00:00:00",
+      "location": "Florence",
+      "price": 145.64,
+      "organizerId": 1,
+      "image": "https://picsum.photos/seed/event11/400/200"
+    },
+    {
+      "id": "12",
+      "title": "Python Camp",
+      "description": "A professional event about Python Camp",
+      "date": "2025-11-18T00:00:00",
+      "location": "Rome",
+      "price": 95.22,
+      "organizerId": 1,
+      "image": "https://picsum.photos/seed/event12/400/200"
+    },
+    {
+      "id": "13",
+      "title": "Node.js Intensive",
+      "description": "A professional event about Node.js Intensive",
+      "date": "2025-10-10T00:00:00",
+      "location": "Rome",
+      "price": 49.12,
+      "organizerId": 1,
+      "image": "https://picsum.photos/seed/event13/400/200"
+    },
+    {
+      "id": "14",
+      "title": "AI Ethics Talk",
+      "description": "A professional event about AI Ethics Talk",
+      "date": "2025-09-18T00:00:00",
+      "location": "Florence",
+      "price": 166.24,
+      "organizerId": 1,
+      "image": "https://picsum.photos/seed/event14/400/200"
+    },
+    {
+      "id": "15",
+      "title": "Agile Coaching",
+      "description": "A professional event about Agile Coaching",
+      "date": "2025-07-31T00:00:00",
+      "location": "Bologna",
+      "price": 17.29,
+      "organizerId": 1,
+      "image": "https://picsum.photos/seed/event15/400/200"
+    },
+    {
+      "id": "16",
+      "title": "Vue.js Masterclass",
+      "description": "A professional event about Vue.js Masterclass",
+      "date": "2025-08-08T00:00:00",
+      "location": "Rome",
+      "price": 198.02,
+      "organizerId": 1,
+      "image": "https://picsum.photos/seed/event16/400/200"
+    },
+    {
+      "id": "17",
+      "title": "Next.js Deep Dive",
+      "description": "A professional event about Next.js Deep Dive",
+      "date": "2025-07-22T00:00:00",
+      "location": "Milan",
+      "price": 136.27,
+      "organizerId": 3,
+      "image": "https://picsum.photos/seed/event17/400/200"
+    },
+    {
+      "id": "18",
+      "title": "Web3 Weekend",
+      "description": "A professional event about Web3 Weekend",
+      "date": "2025-11-25T00:00:00",
+      "location": "Rome",
+      "price": 39.74,
+      "organizerId": 1,
+      "image": "https://picsum.photos/seed/event18/400/200"
+    },
+    {
+      "id": "19",
+      "title": "Mobile Dev Day",
+      "description": "A professional event about Mobile Dev Day",
+      "date": "2025-07-10T00:00:00",
+      "location": "Florence",
+      "price": 16.07,
+      "organizerId": 1,
+      "image": "https://picsum.photos/seed/event19/400/200"
+    },
+    {
+      "id": "20",
+      "title": "Tech Leadership Panel",
+      "description": "A professional event about Tech Leadership Panel",
+      "date": "2025-10-07T00:00:00",
+      "location": "Rome",
+      "price": 19.67,
+      "organizerId": 1,
+      "image": "https://picsum.photos/seed/event20/400/200"
+    },
+    {
+      "id": "508b",
+      "title": "Test",
+      "description": "sdvksnvlskvnslvnd",
+      "date": "Thu Jul 10 2025 00:00:00 GMT+0200",
+      "location": "Rome",
+      "price": 2121,
+      "image": "https://picsum.photos/seed/event3/400/200.png",
+      "participants": []
+    },
+    {
+      "id": "aaa3",
+      "title": "Nuovo evento",
+      "description": "Lorem ipsum dolor",
+      "date": "Thu Jul 31 2025 00:00:00 GMT+0200",
+      "location": "Milan",
+      "price": 122,
+      "image": "https://picsum.photos/seed/event3/400/200.png",
+      "participants": []
+    }
+  ]
+}
