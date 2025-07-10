@@ -55,7 +55,7 @@ export const EventDetailsScene = memo(() => {
         justifyContent="space-between"
       >
         <Stack width={{ xs: "100%", lg: "60%" }} spacing={2}>
-          <Typography variant="h1" color="primary" fontWeight="bold">
+          <Typography variant="h1" fontWeight="bold">
             {event.title}
           </Typography>
           <Divider />
@@ -96,7 +96,7 @@ export const EventDetailsScene = memo(() => {
       </Stack>
       <Box marginTop="auto" sx={{ width: "100%", display: "flex", justifyContent: "center" }}>
         {isSubmittedYet ? ( 
-          <Typography variant="body1" color="primary">
+          <Typography variant="body1">
             {"Sei iscritto a questo evento!"}
           </Typography>
         ) : (
