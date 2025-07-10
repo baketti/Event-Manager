@@ -2,6 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import * as selectors from "./ui.selectors";
 import { DialogTypes, UiState } from "./ui.interfaces";
 import * as sagas from "./ui.sagas";
+import * as extraActions from "../../extra-actions";
 
 const initialState: UiState = {
   isDialogOpen: {
@@ -29,6 +30,11 @@ export const uiStore = createSlice({
         [action.payload.dialogType]: action.payload.open,
       };
     },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(extraActions.appStartup, (state) => {
+      state.isDialogOpen = initialState.isDialogOpen;
+    });
   },
 });
 
