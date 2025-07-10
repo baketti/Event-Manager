@@ -14,6 +14,8 @@ It includes features like:
 
 The backend is powered by `json-server`, simulating a RESTful API for development and testing purposes.
 
+> ⚠️ This project is for **demonstration purposes only**, created to showcase proficiency with React and frontend architecture. It is a **simple demo project**, and all the data used is for **testing only** — not real or accurate. The UI is designed to be clean and functional. I apologize if some event images are not realistic — they are merely placeholders.
+
 ## 🚀 Project Setup & Installation
 
 To run the Event Manager application locally, follow these steps:
