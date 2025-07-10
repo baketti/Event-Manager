@@ -1,15 +1,10 @@
-import { createTheme, responsiveFontSizes, lighten } from "@mui/material";
+import { createTheme, responsiveFontSizes } from "@mui/material";
 
 export const Colors = {
   primary: "#6291A8",
   secondary: "#FA5B7B",
   white: "#FAFAFA",
-  veryLightGrey: "#F2F2F2",
-  lightGrey: "#E4E6EB",
-  grey: "#333333",
   darkGrey: "#2C2C2C",
-  dark: "#121212",
-  black: "#000000",
 };
 
 export default responsiveFontSizes(
@@ -19,12 +14,12 @@ export default responsiveFontSizes(
         main: Colors.primary,
       },
       secondary: {
-        main: Colors.secondary, //"#6291A8", 1F3340
+        main: Colors.secondary,
       },
       text: {
         primary: Colors.darkGrey,
         secondary: Colors.white,
-      },
+      }
     },
     typography: {
       fontFamily: "Open Sans, sans-serif",
@@ -65,15 +60,6 @@ export default responsiveFontSizes(
       },
     },
     components: {
-      MuiButton: {
-        styleOverrides: {
-          root: {
-            '&:hover': {
-              backgroundColor: lighten(Colors.primary, 0.04),
-            },
-          },
-        },
-      },
       MuiDialog: {
         styleOverrides: {
           paper: {
