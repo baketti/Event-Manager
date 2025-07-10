@@ -2,18 +2,11 @@
   "users": [
     {
       "id": "1",
-      "name": "Alice Amministratrice",
+      "name": "Alice Administrator",
       "email": "admin@example.com",
       "password": "admin123",
       "role": "admin",
-      "joinedEvents": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        7
-      ]
+      "joinedEvents": []
     },
     {
       "id": "2",
@@ -21,39 +14,109 @@
       "email": "mario@example.com",
       "password": "mario123",
       "role": "user",
-      "joinedEvents": [
-        8,
-        9,
-        10,
-        14,
-        15,
-        18,
-        19,
-        20,
-        1
-      ]
+      "joinedEvents": []
     },
     {
-      "id": "ae55",
-      "name": "Emanuele Giovanni Bachetti",
-      "email": "manu_7000@gmail.com",
-      "password": "test1234",
+      "id": "3",
+      "name": "Giulia Bianchi",
+      "email": "giulia.bianchi@email.com",
+      "password": "giulia123",
       "role": "user",
       "joinedEvents": []
     },
     {
-      "id": "713f",
-      "name": "Giovanni",
-      "email": "gio@gmail.com",
-      "password": "giovanni123",
+      "id": "4",
+      "name": "Luca Ferrari",
+      "email": "luca.ferrari@email.com",
+      "password": "luca123",
       "role": "user",
       "joinedEvents": []
     },
     {
-      "id": "8046",
-      "name": "Test",
-      "email": "test@gmail.com",
-      "password": "test123",
+      "id": "5",
+      "name": "Francesca Romano",
+      "email": "francesca.romano@email.com",
+      "password": "francesca123",
+      "role": "user",
+      "joinedEvents": []
+    },
+    {
+      "id": "6",
+      "name": "Marco Conti",
+      "email": "marco.conti@email.com",
+      "password": "marco123",
+      "role": "user",
+      "joinedEvents": []
+    },
+    {
+      "id": "7",
+      "name": "Elena Ricci",
+      "email": "elena.ricci@email.com",
+      "password": "elena123",
+      "role": "user",
+      "joinedEvents": []
+    },
+    {
+      "id": "8",
+      "name": "Andrea Marchetti",
+      "email": "andrea.marchetti@email.com",
+      "password": "andrea123",
+      "role": "user",
+      "joinedEvents": []
+    },
+    {
+      "id": "9",
+      "name": "Chiara Galli",
+      "email": "chiara.galli@email.com",
+      "password": "chiara123",
+      "role": "user",
+      "joinedEvents": []
+    },
+    {
+      "id": "10",
+      "name": "Davide Moretti",
+      "email": "davide.moretti@email.com",
+      "password": "davide123",
+      "role": "user",
+      "joinedEvents": []
+    },
+    {
+      "id": "11",
+      "name": "Sara Manager",
+      "email": "sara.manager@example.com",
+      "password": "sara123",
+      "role": "admin",
+      "joinedEvents": []
+    },
+    {
+      "id": "12",
+      "name": "Roberto Verdi",
+      "email": "roberto.verdi@email.com",
+      "password": "roberto123",
+      "role": "user",
+      "joinedEvents": []
+    },
+    {
+      "id": "13",
+      "name": "Valentina Costa",
+      "email": "valentina.costa@email.com",
+      "password": "valentina123",
+      "role": "user",
+      "joinedEvents": []
+    },
+    {
+      "id": "14",
+      "name": "Simone Bruno",
+      "email": "simone.bruno@email.com",
+      "password": "simone123",
+      "role": "user",
+      "joinedEvents": []
+    },
+    {
+      "id": "15",
+      "name": "Martina Russo",
+      "email": "martina.russo@email.com",
+      "password": "martina123",
       "role": "user",
       "joinedEvents": []
     }
@@ -66,7 +129,6 @@
       "date": "2025-11-06T00:00:00",
       "location": "Bologna",
       "price": 101.15,
-      "organizerId": 1,
       "image": "https://picsum.photos/seed/event1/400/200"
     },
     {
@@ -76,7 +138,6 @@
       "date": "2025-12-11T00:00:00",
       "location": "Bologna",
       "price": 77.03,
-      "organizerId": 2,
       "image": "https://picsum.photos/seed/event3/400/200"
     },
     {
@@ -86,7 +147,6 @@
       "date": "2025-11-18T00:00:00",
       "location": "Bologna",
       "price": 145.35,
-      "organizerId": 2,
       "image": "https://picsum.photos/seed/event4/400/200"
     },
     {
@@ -96,7 +156,6 @@
       "date": "2025-07-20T00:00:00",
       "location": "Bologna",
       "price": 16.6,
-      "organizerId": 1,
       "image": "https://picsum.photos/seed/event5/400/200"
     },
     {
@@ -106,7 +165,6 @@
       "date": "2025-08-25T00:00:00",
       "location": "Florence",
       "price": 35.28,
-      "organizerId": 1,
       "image": "https://picsum.photos/seed/event6/400/200"
     },
     {
@@ -116,7 +174,6 @@
       "date": "2025-08-02T00:00:00",
       "location": "Milan",
       "price": 84.66,
-      "organizerId": 3,
       "image": "https://picsum.photos/seed/event7/400/200"
     },
     {
@@ -126,7 +183,6 @@
       "date": "2025-10-24T00:00:00",
       "location": "Turin",
       "price": 137.42,
-      "organizerId": 1,
       "image": "https://picsum.photos/seed/event8/400/200"
     },
     {
@@ -136,7 +192,6 @@
       "date": "2025-10-26T00:00:00",
       "location": "Turin",
       "price": 183.3,
-      "organizerId": 1,
       "image": "https://picsum.photos/seed/event9/400/200"
     },
     {
@@ -146,7 +201,6 @@
       "date": "2025-12-02T00:00:00",
       "location": "Florence",
       "price": 100.65,
-      "organizerId": 1,
       "image": "https://picsum.photos/seed/event10/400/200"
     },
     {
@@ -156,7 +210,6 @@
       "date": "2025-09-15T00:00:00",
       "location": "Florence",
       "price": 145.64,
-      "organizerId": 1,
       "image": "https://picsum.photos/seed/event11/400/200"
     },
     {
@@ -166,7 +219,6 @@
       "date": "2025-11-18T00:00:00",
       "location": "Rome",
       "price": 95.22,
-      "organizerId": 1,
       "image": "https://picsum.photos/seed/event12/400/200"
     },
     {
@@ -176,7 +228,6 @@
       "date": "2025-10-10T00:00:00",
       "location": "Rome",
       "price": 49.12,
-      "organizerId": 1,
       "image": "https://picsum.photos/seed/event13/400/200"
     },
     {
@@ -186,7 +237,6 @@
       "date": "2025-09-18T00:00:00",
       "location": "Florence",
       "price": 166.24,
-      "organizerId": 1,
       "image": "https://picsum.photos/seed/event14/400/200"
     },
     {
@@ -196,7 +246,6 @@
       "date": "2025-07-31T00:00:00",
       "location": "Bologna",
       "price": 17.29,
-      "organizerId": 1,
       "image": "https://picsum.photos/seed/event15/400/200"
     },
     {
@@ -206,7 +255,6 @@
       "date": "2025-08-08T00:00:00",
       "location": "Rome",
       "price": 198.02,
-      "organizerId": 1,
       "image": "https://picsum.photos/seed/event16/400/200"
     },
     {
@@ -216,7 +264,6 @@
       "date": "2025-07-22T00:00:00",
       "location": "Milan",
       "price": 136.27,
-      "organizerId": 3,
       "image": "https://picsum.photos/seed/event17/400/200"
     },
     {
@@ -226,7 +273,6 @@
       "date": "2025-11-25T00:00:00",
       "location": "Rome",
       "price": 39.74,
-      "organizerId": 1,
       "image": "https://picsum.photos/seed/event18/400/200"
     },
     {
@@ -236,7 +282,6 @@
       "date": "2025-07-10T00:00:00",
       "location": "Florence",
       "price": 16.07,
-      "organizerId": 1,
       "image": "https://picsum.photos/seed/event19/400/200"
     },
     {
@@ -246,28 +291,7 @@
       "date": "2025-10-07T00:00:00",
       "location": "Rome",
       "price": 19.67,
-      "organizerId": 1,
       "image": "https://picsum.photos/seed/event20/400/200"
-    },
-    {
-      "id": "508b",
-      "title": "Test",
-      "description": "sdvksnvlskvnslvnd",
-      "date": "Thu Jul 10 2025 00:00:00 GMT+0200",
-      "location": "Rome",
-      "price": 2121,
-      "image": "https://picsum.photos/seed/event3/400/200.png",
-      "participants": []
-    },
-    {
-      "id": "aaa3",
-      "title": "Nuovo evento",
-      "description": "Lorem ipsum dolor",
-      "date": "Thu Jul 31 2025 00:00:00 GMT+0200",
-      "location": "Milan",
-      "price": 122,
-      "image": "https://picsum.photos/seed/event3/400/200.png",
-      "participants": []
     }
   ]
 }
