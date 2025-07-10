@@ -1,5 +1,5 @@
 import React, { memo } from "react";
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom";
 import { 
   AuthenticationScene,
   LandingPageScene,
@@ -25,10 +25,7 @@ const App: React.FC = () => {
       <Routes>
         <Route path="" element={<AppContainer />}>
           <Route path="" element={<LandingPageScene />} />
-          <Route
-            path="authentication"
-            element={<AuthenticationScene />}
-          >
+          <Route path="authentication" element={<AuthenticationScene />}>
             <Route
               path="login"
               element={<LoginScene />}
@@ -39,10 +36,8 @@ const App: React.FC = () => {
             />
           </Route>
           <Route path="app" element={<RoutesProtector />}>
-            <Route
-              path=""
-              element={<DashboardScene />}
-            >
+            <Route path="" element={<DashboardScene />}>
+              <Route index element={<Navigate to="events" replace />} />
               <Route
                 path="events"
                 element={<EventsScene />}
