@@ -1,6 +1,7 @@
 import { memo } from "react";
 import { useUsersScene } from "./index.hooks";
 import { Box, Button, Stack } from "@mui/material";
+import AddIcon from "@mui/icons-material/Add";
 import { DataGrid } from "@mui/x-data-grid";
 import { Widget } from "@/components/Widget";
 import { EditUserDialog } from "@/components/EditUserDialog";
@@ -14,11 +15,17 @@ export const UsersScene = memo(() => {
     handleOpenCreateUserDialog,
   } = useUsersScene();
 
+
   return (
     <>
       <Box mb={2} display="flex" justifyContent="flex-end">
-        <Button onClick={handleOpenCreateUserDialog} variant="contained" color="primary">
-          Crea Nuovo Utente
+        <Button 
+          onClick={handleOpenCreateUserDialog} 
+          variant="contained" 
+          startIcon={<AddIcon />}
+          aria-label="Create new event"
+        >
+          {"Create User"}
         </Button>
       </Box>
       <Widget sx={{ flex: 1,  width: "100%", display: "flex", flexDirection: "column", gap: 2 }}>
@@ -27,6 +34,11 @@ export const UsersScene = memo(() => {
             columns={columns}
             rows={usersRows}
             autoPageSize
+            initialState={{
+              pagination: {
+                paginationModel: { pageSize: 5, page: 0 },
+              },
+            }}      
           />
         </Stack>
       </Widget>

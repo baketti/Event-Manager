@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { actions, selectors } from "@/app/redux-store";
 import { DialogTypes } from "@/app/redux-store/slices/ui/ui.interfaces";
 import { locations } from "@/utils";
+import moment from "moment";
 
 export type CreateEventDialogData = {
   title: string;
@@ -68,11 +69,10 @@ export const useCreateEventDialog = () => {
   const triggerSubmit = useMemo(
     () =>
       handleSubmit((data) => {
-        console.log("Submitting event data:", data);
-        dispatch(actions.postEvents.request(data));
-      },
-      (errors) => {
-        console.log("VALIDATION ERRORS:", errors);
+        dispatch(actions.postEvents.request({
+          ...data,
+          date: moment(data.date).format("YYYY-MM-DDTHH:mm:ss"),
+        }));
       }
     ),
     [dispatch, handleSubmit],

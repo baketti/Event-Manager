@@ -31,19 +31,19 @@ export const EditEventDialog = memo(() => {
         onClose={handleCloseDialog}
       >
         <form onSubmit={triggerSubmit}>
-          <DialogTitle>{"Modifica evento"}</DialogTitle>
+          <DialogTitle>{"Edit Event"}</DialogTitle>
           <DialogContent>
             <Stack spacing={3} sx={{ py: 1 }}>
-              <FormTextField name="title" label="Titolo" />
-              <FormTextField name="description" label="Descrizione" multiline rows={4} />
-              <FormDatePicker name="date" label="Data" fullWidth />
+              <FormTextField name="title" label="Title" />
+              <FormTextField name="description" label="Description" multiline rows={4} />
+              <FormDatePicker name="date" label="Date" fullWidth />
               <FormSelect 
                 name='location' 
                 label='Locations' 
                 options={locationsOptions}
               />
-              <FormTextField name="price" label="Prezzo" type="number" />
-              <FormTextField name="image" label="URL immagine" />
+              <FormTextField name="price" label="Price" type="number" />
+              <FormTextField name="image" label="Image URL" />
             </Stack>
           </DialogContent>
           <DialogActions>
@@ -52,7 +52,7 @@ export const EditEventDialog = memo(() => {
               color="secondary"
               onClick={handleCloseDialog}
             >
-              {"Annulla"}
+              {"Cancel"}
             </AppButton>
             <AppButton
               variant="contained"
@@ -60,7 +60,7 @@ export const EditEventDialog = memo(() => {
               disabled={submitDisabled}
               loading={isPatchEventsByEventIdAjaxLoading}
             >
-              {"Salva"}
+              {"Save"}
             </AppButton>
           </DialogActions>
         </form>

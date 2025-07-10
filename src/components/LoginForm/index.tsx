@@ -31,7 +31,7 @@ export const LoginForm = memo(() => {
               }
             >
               <Typography sx={{ "&:hover": { textDecoration: "underline" } }}>
-                Non hai un account? Registrati
+                {"Don't have an account? Sign up"}
               </Typography>
             </Link>
           </Stack>
@@ -41,7 +41,7 @@ export const LoginForm = memo(() => {
             disabled={submitDisabled}
             loading={isLoginAjaxLoading}
           >
-            Accedi
+            {"Sing In"}
           </AppButton>
         </Stack>
       </form>

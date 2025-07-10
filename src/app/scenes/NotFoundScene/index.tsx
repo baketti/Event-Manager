@@ -22,13 +22,13 @@ export const NotFoundScene = () => {
         >
             <ErrorMessage color="error">
                 <Typography variant="h3">
-                    404 - Pagina non trovata
+                    {"404 - Page not found"}
                 </Typography>
                 <Typography variant="body1" mt={2}>
-                    La pagina che stai cercando non esiste.
+                    {"The page you are looking for does not exist."}
                 </Typography>
                 <Button variant="contained" sx={{ mt: 3 }} onClick={handleGoBackHome}>
-                    Torna alla Home
+                    {"Back to Home"}
                 </Button>
             </ErrorMessage>
         </Box>

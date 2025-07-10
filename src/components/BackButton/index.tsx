@@ -34,7 +34,7 @@ export const BackButton = memo(({label}: BackButtonProps) => {
                         }
                     }}
                 >
-                    Torna alla lista {label}
+                    {"Back to"} {label}
                 </Typography>
             </Box>
         </Box>

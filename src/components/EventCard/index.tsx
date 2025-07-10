@@ -89,7 +89,6 @@ export const EventCard = memo(({ event }: EventCardProps) => {
         <Stack
           direction={{ xs: "column", sm: "row" }}
           spacing={{ xs: 1, sm: 4 }}
-          //color="#6f737a"
           justifyContent="space-between"
         >
           <Box width={1} display="flex" justifyContent="space-around" gap={2}>

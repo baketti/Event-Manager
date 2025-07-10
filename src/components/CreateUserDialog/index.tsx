@@ -27,13 +27,13 @@ export const CreateUserDialog = memo(() => {
     <FormProvider {...formData}>
       <Dialog open={isCreateUserDialogOpen} onClose={handleCloseDialog}>
         <form onSubmit={triggerSubmit}>
-          <DialogTitle>Crea Utente</DialogTitle>
+          <DialogTitle>{"Create User"}</DialogTitle>
           <DialogContent>
             <Stack spacing={3} sx={{ py: 1 }}>
-              <FormTextField name="name" label="Nome" />
+              <FormTextField name="name" label="Name" />
               <FormTextField name="email" label="Email" type="email" />
               <FormTextField name="password" label="Password" type="password" />
-              <FormSelect name="role" label="Ruolo" options={userRoleOptions} />
+              <FormSelect name="role" label="Role" options={userRoleOptions} />
             </Stack>
           </DialogContent>
           <DialogActions>
@@ -42,7 +42,7 @@ export const CreateUserDialog = memo(() => {
               color="secondary"
               onClick={handleCloseDialog}
             >
-              Annulla
+              {"Cancel"}
             </AppButton>
             <AppButton
               variant="contained"
@@ -50,7 +50,7 @@ export const CreateUserDialog = memo(() => {
               disabled={submitDisabled}
               loading={isPostUsersByAdminAjaxLoading}
             >
-              Salva
+              {"Save"}
             </AppButton>
           </DialogActions>
         </form>

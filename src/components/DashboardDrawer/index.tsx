@@ -114,7 +114,7 @@ export const DashboardDrawer = memo(() => {
         </List>
         <Divider />
         <List>
-          {["Esci"].map((text) => (
+          {["Logout"].map((text) => (
             <ListItem key={text} disablePadding sx={{ display: "block" }}>
               <ListItemButton
                 sx={{

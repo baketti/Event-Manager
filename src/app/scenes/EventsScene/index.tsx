@@ -51,7 +51,7 @@ export const EventsScene = memo(() => {
           onClick={handleResetAllEvents} 
           variant="contained"
         >
-              Tutti gli eventi  
+              {"All events"} 
         </Button>
         { isAdmin && (  
           <Button
@@ -65,7 +65,10 @@ export const EventsScene = memo(() => {
               startIcon={<AddIcon />}
               variant="contained"
               onClick={handleOpenCreateEventDialog}
-          />
+              aria-label="Create new event"
+          >
+            {"Create event"}
+          </Button>
         )}
         <FormProvider {...formData}>
           <form onSubmit={triggerSubmit} style={{ width: "100%" }}>
@@ -76,7 +79,7 @@ export const EventsScene = memo(() => {
               alignItems="center"
             >
               <Button sx={{display:{xs: 'none', md: 'block'}}} disabled={resetEventsDisabled} onClick={handleResetAllEvents} variant="contained">
-                Tutti gli eventi
+                {"All events"}
               </Button>
               <FormSelect 
                 name='location' 
@@ -118,7 +121,7 @@ export const EventsScene = memo(() => {
             ) : (
               <ErrorMessage color="grey">
                 <Typography variant="h4">
-                  No events found
+                  {"No events found"}
                 </Typography>
               </ErrorMessage>
             )}

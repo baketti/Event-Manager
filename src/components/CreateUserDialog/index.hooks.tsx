@@ -15,94 +15,91 @@ export type CreateUserDialogData = {
 };
 
 export const useCreateUserDialog = () => {
-  const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
-  const schema = useMemo(() => {
-    return yup.object({
-      name: yup.string().required("Il nome è obbligatorio"),
-      email: yup.string().email("Email non valida").required("L'email è obbligatoria"),
-      password: yup.string().required("La password è obbligatoria"),
-      role: yup
-        .mixed<UserRoles>()
-        .oneOf(Object.values(UserRoles))
-        .required("Il ruolo è obbligatorio"),
+    const schema = useMemo(() => {
+      return yup.object({
+        name: yup.string().required("Il nome è obbligatorio"),
+        email: yup.string().email("Email non valida").required("L'email è obbligatoria"),
+        password: yup.string().required("La password è obbligatoria"),
+        role: yup
+          .mixed<UserRoles>()
+          .oneOf(Object.values(UserRoles))
+          .required("Il ruolo è obbligatorio"),
+      });
+    }, []);
+
+    const formData = useForm<CreateUserDialogData>({
+      resolver: yupResolver(schema),
+      defaultValues: {
+        name: "",
+        email: "",
+        password: "",
+        role: undefined,
+      },
     });
-  }, []);
 
-  const formData = useForm<CreateUserDialogData>({
-    resolver: yupResolver(schema),
-    defaultValues: {
-      name: "",
-      email: "",
-      password: "",
-      role: undefined,
-    },
-  });
+    const {
+      reset,
+      handleSubmit,
+      formState: { isValid, isSubmitted },
+    } = formData;
 
-  const {
-    reset,
-    handleSubmit,
-    formState: { isValid, isSubmitted },
-  } = formData;
-
-  const isPostUsersByAdminAjaxLoading = useSelector(
-    selectors.getAjaxIsLoadingByApi(actions.postUsersByAdmin.api)
-  );
-
-  const submitDisabled = (isSubmitted && !isValid) || isPostUsersByAdminAjaxLoading;
-
-  const isCreateUserDialogOpen = useSelector(selectors.getIsDialogOpen)[
-    DialogTypes.CREATE_USER
-  ];
-
-  const triggerSubmit = useMemo(
-    () =>
-      handleSubmit(
-        (data) => {
-          dispatch(actions.postUsersByAdmin.request(data));
-        },
-        (errors) => {
-          console.error("VALIDATION ERRORS:", errors);
-        }
-      ),
-    [dispatch, handleSubmit]
-  );
-
-  const handleCloseDialog = useCallback(() => {
-    dispatch(
-      actions.setDialogOpen({
-        dialogType: DialogTypes.CREATE_USER,
-        open: false,
-      })
+    const isPostUsersByAdminAjaxLoading = useSelector(
+      selectors.getAjaxIsLoadingByApi(actions.postUsersByAdmin.api)
     );
-    reset({
-      name: "",
-      email: "",
-      password: "",
-      role: undefined,
-    });
-  }, [dispatch, reset]);
 
-  useEffect(() => {
-    reset({
-      name: "",
-      email: "",
-      password: "",
-      role: undefined,
-    });
-  }, [reset]);
+    const submitDisabled = (isSubmitted && !isValid) || isPostUsersByAdminAjaxLoading;
 
-  const userRoleOptions = useMemo(() => 
-      Object.values(UserRoles).map((role) => ({ value: role, label: role })
-    ), []);
+    const isCreateUserDialogOpen = useSelector(selectors.getIsDialogOpen)[
+      DialogTypes.CREATE_USER
+    ];
 
-  return {
-    formData,
-    triggerSubmit,
-    submitDisabled,
-    isPostUsersByAdminAjaxLoading,
-    isCreateUserDialogOpen,
-    handleCloseDialog,
-    userRoleOptions,
-  };
+    const triggerSubmit = useMemo(
+      () =>
+        handleSubmit(
+          (data) => {
+            dispatch(actions.postUsersByAdmin.request(data));
+          },
+        ),
+      [dispatch, handleSubmit]
+    );
+
+    const handleCloseDialog = useCallback(() => {
+      dispatch(
+        actions.setDialogOpen({
+          dialogType: DialogTypes.CREATE_USER,
+          open: false,
+        })
+      );
+      reset({
+        name: "",
+        email: "",
+        password: "",
+        role: undefined,
+      });
+    }, [dispatch, reset]);
+
+    useEffect(() => {
+      reset({
+        name: "",
+        email: "",
+        password: "",
+        role: undefined,
+      });
+    }, [reset]);
+
+    const userRoleOptions = useMemo(() => 
+        Object.values(UserRoles).map((role) => ({ value: role, label: role })
+      ), []);
+
+    return {
+      formData,
+      triggerSubmit,
+      submitDisabled,
+      isPostUsersByAdminAjaxLoading,
+      isCreateUserDialogOpen,
+      handleCloseDialog,
+      userRoleOptions,
+    };
 };

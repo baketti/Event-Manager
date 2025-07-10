@@ -81,7 +81,7 @@ export const AppNavbar = memo(({
             noWrap
             component="div"
           >
-            Event Manager
+            {"Event Manager"}
           </Typography>
           {open && !isSmallScreen &&
             <IconButton onClick={onDrawerClose}>

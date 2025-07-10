@@ -6,7 +6,7 @@ export function* eventSaga() {
     yield takeEvery(actions.postEvents.success, function* () {
         yield put(actions.setFeedback({
             type: "success",
-            message: "Evento creato con successo",
+            message: "Event created successfully",
         }));
         yield put(actions.setDialogOpen({
             dialogType: DialogTypes.CREATE_EVENT,
@@ -16,7 +16,7 @@ export function* eventSaga() {
     yield takeEvery(actions.patchEventsByEventId.success, function* () {
         yield put(actions.setFeedback({
             type: "success",
-            message: "Evento modificato con successo",
+            message: "Event updated successfully",
         }));
         yield put(actions.setDialogOpen({
             dialogType: DialogTypes.EDIT_EVENT,
@@ -27,7 +27,7 @@ export function* eventSaga() {
     yield takeEvery(actions.deleteEventsByEventId.success, function* () {
         yield put(actions.setFeedback({
             type: "success",
-            message: "Evento eliminato con successo",
+            message: "Event deleted successfully",
         }));
     });
 }

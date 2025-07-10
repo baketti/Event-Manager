@@ -30,12 +30,12 @@ export const EditUserDialog = memo(() => {
         onClose={handleCloseDialog}
       >
         <form onSubmit={triggerSubmit}>
-          <DialogTitle>{"Modifica utente"}</DialogTitle>
+          <DialogTitle>{"Edit User"}</DialogTitle>
           <DialogContent>
             <Stack spacing={3} sx={{ py: 1 }}>
-              <FormTextField name="name" label="Nome" />
+              <FormTextField name="name" label="Name" />
               <FormTextField name="email" label="Email" type="email" />
-              <FormSelect name="role" label="Ruolo" options={userRoleOptions} />
+              <FormSelect name="role" label="Role" options={userRoleOptions} />
             </Stack>
           </DialogContent>
           <DialogActions>
@@ -44,7 +44,7 @@ export const EditUserDialog = memo(() => {
               color="secondary"
               onClick={handleCloseDialog}
             >
-              {"Annulla"}
+              {"Cancel"}
             </AppButton>
             <AppButton
               variant="contained"
@@ -52,7 +52,7 @@ export const EditUserDialog = memo(() => {
               disabled={submitDisabled}
               loading={isEditingUser}
             >
-              {"Salva"}
+              {"Save"}
             </AppButton>
           </DialogActions>
         </form>

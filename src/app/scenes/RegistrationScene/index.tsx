@@ -19,7 +19,7 @@ export const RegistrationScene = memo(() => {
         <LockOutlinedIcon />
       </Avatar>
       <Typography component="h1" variant="h5">
-        Registrati
+        {"Register"}
       </Typography>
       <Paper sx={{ p: 4, minWidth: {xs:"unset",sm:"480px"}}}>
         <RegisterForm />

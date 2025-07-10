@@ -48,7 +48,7 @@ export const EventDetailsScene = memo(() => {
   )
   return (
     <Stack height="100%" position="relative" spacing={8} mt={2} mb={8}>
-      <BackButton label="eventi" />
+      <BackButton label="events" />
       <Stack
         direction={{ xs: "column", lg: "row" }}
         spacing={2}
@@ -97,7 +97,7 @@ export const EventDetailsScene = memo(() => {
       <Box marginTop="auto" sx={{ width: "100%", display: "flex", justifyContent: "center" }}>
         {isSubmittedYet ? ( 
           <Typography variant="body1">
-            {"Sei iscritto a questo evento!"}
+            {"You are registered for this event!"}
           </Typography>
         ) : (
           <AppButton
@@ -107,7 +107,7 @@ export const EventDetailsScene = memo(() => {
             onClick={handleEventSubscription}
             disabled={isPatchUsersEventSubscriptionAjaxLoading || isAdmin}
           >
-            {"Iscriviti"}
+            {"Join event"}
           </AppButton>
         )}
       </Box>

@@ -20,10 +20,10 @@ export const RegisterForm = memo(() => {
     <FormProvider {...formData}>
       <form onSubmit={triggerSubmit}>
         <Stack spacing={2}>
-          <FormTextField name="name" label="Nome" />
+          <FormTextField name="name" label="Name" />
           <FormTextField name="email" label="Email" type="email" />
           <FormPassword name="password" label="Password" />
-          <FormPassword name="confirmPassword" label="Conferma password" />
+          <FormPassword name="confirmPassword" label="Confirm Password" />
           <Stack alignItems="center">
             <Link
               style={{ width: "max-content" }}
@@ -34,7 +34,7 @@ export const RegisterForm = memo(() => {
               }
             >
               <Typography sx={{ "&:hover": { textDecoration: "underline" } }}>
-                Hai già un account? Accedi
+                {"Already have an account? Sign In"} 
               </Typography>
             </Link>
           </Stack>
@@ -44,7 +44,7 @@ export const RegisterForm = memo(() => {
             disabled={submitDisabled}
             loading={isPostUserAjaxLoading}
           >
-            Registrati
+            {"Sign Up"}
           </AppButton>
         </Stack>
       </form>

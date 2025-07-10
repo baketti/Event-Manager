@@ -34,24 +34,28 @@ export const CreateEventDialog = memo(() => {
               <FormTextField name="title" label="Titolo" />
               <FormTextField 
                 name="description" 
-                label="Descrizione" 
+                label="Description" 
                 multiline 
                 rows={4}
-                placeholder="Descrivi l'evento in dettaglio..."
+                placeholder="Describe the event in detail..."
               />
               <FormSelect 
                 name='location' 
                 label='Locations' 
                 options={locationsOptions}
               />
-              <FormTextField name="price" label="Prezzo" type="number" />
+              <FormTextField 
+                name="price" 
+                label="Price" 
+                type="number" 
+              />
               <FormTextField 
                 name="image" 
-                label="URL Immagine" 
+                label="Image URL" 
                 placeholder="https://esempio.com/immagine.jpg"
                 type="url"
               />
-              <FormDatePicker name="date" label="Data" />
+              <FormDatePicker name="date" label="Date" />
             </Stack>
           </DialogContent>
           <DialogActions>
@@ -60,7 +64,7 @@ export const CreateEventDialog = memo(() => {
               color="secondary"
               onClick={handleCloseDialog}
             >
-              Annulla
+              {"Cancel"}
             </AppButton>
             <AppButton
               variant="contained"
@@ -68,7 +72,7 @@ export const CreateEventDialog = memo(() => {
               disabled={submitDisabled}
               loading={isPostEventsAjaxLoading}
             >
-              Salva
+              {"Save"}
             </AppButton>
           </DialogActions>
         </form>

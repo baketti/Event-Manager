@@ -23,7 +23,7 @@ export const LandingPageScene = memo(() => {
                   width: "60%",
                 }
               }}>
-                Sei pronto a scoprire il tuo prossimo evento?
+                {"Ready to discover your next event?"}
               </Typography>
               
               <Link 
@@ -36,7 +36,7 @@ export const LandingPageScene = memo(() => {
                     textDecoration: "underline",
                   },
                 }}>
-                  Accedi <ArrowOutwardIcon />
+                  {"Sign In"} <ArrowOutwardIcon />
                 </Typography>
               </Link>
             </Stack>
@@ -48,7 +48,6 @@ export const LandingPageScene = memo(() => {
             bottom: { xs: 200, sm: "unset" },
             right: 0,
             zIndex: { xs: 0, md: -1 },
-            //display: { sm: "none", md: "block" },
             width: { md: "60%" },
           }}
         >
