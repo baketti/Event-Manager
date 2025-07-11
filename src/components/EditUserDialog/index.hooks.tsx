@@ -25,11 +25,18 @@ export const useEditUserDialog = () => {
 
   const schema = useMemo(() => {
     return yup.object({
-      name: yup.string().min(3, "Il nome deve essere di almeno 3 caratteri").required("Campo obbligatorio"),
-      email: yup.string().email("Email non valida").required("Campo obbligatorio"),
-      role: yup.mixed<UserRoles>()
-      .oneOf(Object.values(UserRoles), "Ruolo non valido")
-      .required("Campo obbligatorio"),
+      name: yup
+        .string()
+        .min(3, "Name must contain at least 3 characters")
+        .required("Name is required"), 
+      email: yup
+        .string()
+        .email("Invalid email format") 
+        .required("Email is required"), 
+      role: yup
+        .mixed<UserRoles>()
+        .oneOf(Object.values(UserRoles), "Invalid role") 
+        .required("Role is required"),
     });
   }, []);
 

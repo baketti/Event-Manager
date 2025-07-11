@@ -28,15 +28,17 @@ export const useEditEventDialog = () => {
 
   const schema = useMemo(() => {
     return yup.object({
-      title: yup.string().required("Campo obbligatorio"),
-      description: yup.string().required("Campo obbligatorio"),
-      location: yup.string().required("Campo obbligatorio"),
+      title: yup.string().required("Title is required"),
+      description: yup.string().required("Description is required"),
+      location: yup.string().required("Location is required"),
+
       price: yup
         .number()
-        .typeError("Inserire un numero")
-        .required("Campo obbligatorio"),
-      date: yup.string().required("Campo obbligatorio"),
-      image: yup.string().url("URL non valido").required("Campo obbligatorio"),
+        .typeError("Insert a valid price")
+        .required("Price is required")
+        .min(0, "Price cannot be negative"),
+      date: yup.string().required("Date is required"),
+      image: yup.string().url("Not valid URL").required("Image URL is required"),
     });
   }, []);
 

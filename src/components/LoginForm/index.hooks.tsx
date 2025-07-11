@@ -16,8 +16,8 @@ export const useLoginForm = () => {
     
     const schema = useMemo(() => {
         return yup.object({
-          email: yup.string().email().required("L'email è obbligatoria"),
-          password: yup.string().required("La password è obbligatoria"),
+          email: yup.string().email().required("Email is required"),
+          password: yup.string().required("Password is required"),
         })
       }, []
     );

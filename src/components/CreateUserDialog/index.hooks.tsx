@@ -19,13 +19,13 @@ export const useCreateUserDialog = () => {
 
     const schema = useMemo(() => {
       return yup.object({
-        name: yup.string().required("Il nome è obbligatorio"),
-        email: yup.string().email("Email non valida").required("L'email è obbligatoria"),
-        password: yup.string().required("La password è obbligatoria"),
+        name: yup.string().required("Name is required"),
+        email: yup.string().email("Not valid email").required("Email is required"),
+        password: yup.string().required("Password is required"),
         role: yup
           .mixed<UserRoles>()
           .oneOf(Object.values(UserRoles))
-          .required("Il ruolo è obbligatorio"),
+          .required("Role is required"),
       });
     }, []);
 

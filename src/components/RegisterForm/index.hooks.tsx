@@ -21,18 +21,18 @@ export const useRegisterForm = () => {
       name: yup
         .string()
         .optional()
-        .min(3, "Il nome deve contenere almeno 3 caratteri"),
+        .min(3, "Name must contain at least 3 characters"),
       email: yup
         .string()
-        .email()
-        .required("L'email è obbligatoria"),
+        .email("Invalid email format")
+        .required("Email is required"),
       password: yup
         .string()
-        .min(8, "La password deve contenere minimo 8 caratteri")
-        .required("La password è obbligatoria"),
+        .min(8, "Password must contain at least 8 characters") 
+        .required("Password is required"), 
       confirmPassword: yup
         .string()
-        .oneOf([yup.ref("password")], "La password deve essere uguale"),
+        .oneOf([yup.ref("password")], "Passwords must match"), 
     }) as yup.ObjectSchema<RegisterFormData>;
   },[]);
 
@@ -40,7 +40,7 @@ export const useRegisterForm = () => {
     () =>
       Object.values(UserRoles).map((role) => ({
         value: role.toString(),
-        label: role == UserRoles.ADMIN ? "Amministratore" : "Utente",
+        label: role == UserRoles.ADMIN ? "Administrator" : "User",
       })),
     [],
   );

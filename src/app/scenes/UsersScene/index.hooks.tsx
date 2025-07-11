@@ -45,7 +45,7 @@ export const useUsersScene = () => {
     const { show: handleOpenDeleteUserDialog, dialog: DeleteUserDialog } = useConfirmDialog({
       onConfirm: handleDeleteUser,
       onCancel: () => null,
-      content: "Sei sicuro di voler eliminare questo utente?",
+      content: "Are you sure you want to delete this user?",
     });
 
   useEffect(() => {

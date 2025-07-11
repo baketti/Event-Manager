@@ -22,17 +22,30 @@ export const useCreateEventDialog = () => {
 
   const schema = useMemo(() => {
     return yup.object({
-      title: yup.string().min(3, "Il titolo deve essere di almeno 3 caratteri").required("Campo obbligatorio"),
-      description: yup.string().min(10, "La descrizione deve essere di almeno 10 caratteri").required("Campo obbligatorio"),
-      location: yup.string().required("Campo obbligatorio"),
-      date: yup.string().required("Campo obbligatorio"),
-      price: yup.number().min(0, "Il prezzo non può essere negativo").optional(),
+      title: yup
+        .string()
+        .min(3, "Title must be at least 3 characters long") 
+        .required("This field is required"),
+      description: yup
+        .string()
+        .min(10, "Description must be at least 10 characters long")
+        .required("This field is required"),
+      location: yup
+        .string()
+        .required("This field is required"), 
+      date: yup
+        .string()
+        .required("This field is required"), 
+      price: yup
+        .number()
+        .min(0, "Price cannot be negative") 
+        .optional(),
       image: yup
         .string()
-        .url("Inserisci un URL valido")
+        .url("Please enter a valid URL")
         .matches(
           /\.(jpg|jpeg|png|gif|webp|svg)$/i,
-          "L'immagine deve essere di uno dei seguenti formati: jpg, jpeg, png, gif, webp, svg"
+          "Image must be in one of the following formats: jpg, jpeg, png, gif, webp, svg" 
         )
         .optional(),
     });
