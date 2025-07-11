@@ -119,6 +119,166 @@
       "password": "martina123",
       "role": "user",
       "joinedEvents": []
+    },
+    {
+      "id": "16",
+      "name": "Lorenzo Fontana",
+      "email": "lorenzo.fontana@email.com",
+      "password": "lorenzo123",
+      "role": "user",
+      "joinedEvents": []
+    },
+    {
+      "id": "17",
+      "name": "Federica Pellegrini",
+      "email": "federica.pellegrini@email.com",
+      "password": "federica123",
+      "role": "user",
+      "joinedEvents": []
+    },
+    {
+      "id": "18",
+      "name": "Alessandro De Sanctis",
+      "email": "alessandro.desanctis@email.com",
+      "password": "alessandro123",
+      "role": "user",
+      "joinedEvents": []
+    },
+    {
+      "id": "19",
+      "name": "Beatrice Lombardi",
+      "email": "beatrice.lombardi@email.com",
+      "password": "beatrice123",
+      "role": "user",
+      "joinedEvents": []
+    },
+    {
+      "id": "20",
+      "name": "Matteo Neri",
+      "email": "matteo.neri@email.com",
+      "password": "matteo123",
+      "role": "user",
+      "joinedEvents": []
+    },
+    {
+      "id": "21",
+      "name": "Caterina Villa",
+      "email": "caterina.villa@email.com",
+      "password": "caterina123",
+      "role": "user",
+      "joinedEvents": []
+    },
+    {
+      "id": "22",
+      "name": "Nicola Admin",
+      "email": "nicola.admin@example.com",
+      "password": "nicola123",
+      "role": "admin",
+      "joinedEvents": []
+    },
+    {
+      "id": "23",
+      "name": "Sofia Martini",
+      "email": "sofia.martini@email.com",
+      "password": "sofia123",
+      "role": "user",
+      "joinedEvents": []
+    },
+    {
+      "id": "24",
+      "name": "Filippo Greco",
+      "email": "filippo.greco@email.com",
+      "password": "filippo123",
+      "role": "user",
+      "joinedEvents": []
+    },
+    {
+      "id": "25",
+      "name": "Camilla Sartori",
+      "email": "camilla.sartori@email.com",
+      "password": "camilla123",
+      "role": "user",
+      "joinedEvents": []
+    },
+    {
+      "id": "26",
+      "name": "Tommaso Ferri",
+      "email": "tommaso.ferri@email.com",
+      "password": "tommaso123",
+      "role": "user",
+      "joinedEvents": []
+    },
+    {
+      "id": "27",
+      "name": "Giorgia Benedetti",
+      "email": "giorgia.benedetti@email.com",
+      "password": "giorgia123",
+      "role": "user",
+      "joinedEvents": []
+    },
+    {
+      "id": "28",
+      "name": "Riccardo Mancini",
+      "email": "riccardo.mancini@email.com",
+      "password": "riccardo123",
+      "role": "user",
+      "joinedEvents": []
+    },
+    {
+      "id": "29",
+      "name": "Anna Supervisor",
+      "email": "anna.supervisor@example.com",
+      "password": "anna123",
+      "role": "admin",
+      "joinedEvents": []
+    },
+    {
+      "id": "30",
+      "name": "Michele Caruso",
+      "email": "michele.caruso@email.com",
+      "password": "michele123",
+      "role": "user",
+      "joinedEvents": []
+    },
+    {
+      "id": "31",
+      "name": "Serena Vitali",
+      "email": "serena.vitali@email.com",
+      "password": "serena123",
+      "role": "user",
+      "joinedEvents": []
+    },
+    {
+      "id": "32",
+      "name": "Daniele Fiore",
+      "email": "daniele.fiore@email.com",
+      "password": "daniele123",
+      "role": "user",
+      "joinedEvents": []
+    },
+    {
+      "id": "33",
+      "name": "Claudia Monti",
+      "email": "claudia.monti@email.com",
+      "password": "claudia123",
+      "role": "user",
+      "joinedEvents": []
+    },
+    {
+      "id": "34",
+      "name": "Enrico Parisi",
+      "email": "enrico.parisi@email.com",
+      "password": "enrico123",
+      "role": "user",
+      "joinedEvents": []
+    },
+    {
+      "id": "35",
+      "name": "Ilaria Rossini",
+      "email": "ilaria.rossini@email.com",
+      "password": "ilaria123",
+      "role": "user",
+      "joinedEvents": []
     }
   ],
   "events": [
