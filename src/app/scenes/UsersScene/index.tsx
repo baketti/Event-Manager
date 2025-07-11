@@ -33,12 +33,14 @@ export const UsersScene = memo(() => {
           <DataGrid
             columns={columns}
             rows={usersRows}
-            autoPageSize
             initialState={{
-              pagination: {
-                paginationModel: { pageSize: 5, page: 0 },
+              pagination: { 
+                paginationModel: { 
+                  page: 0,        
+                  pageSize: 15               
+                } 
               },
-            }}      
+            }}
           />
         </Stack>
       </Widget>
