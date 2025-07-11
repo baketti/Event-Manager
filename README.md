@@ -15,6 +15,7 @@ It includes features like:
 The backend is powered by `json-server`, simulating a RESTful API for development and testing purposes.
 
 > ⚠️ This project is for **demonstration purposes only**, created to showcase proficiency with React and frontend architecture. It is a **simple demo project**, and all the data used is for **testing only** — not real or accurate. The UI is designed to be clean and functional. I apologize if some event images are not realistic — they are merely placeholders.
+
 Although not strictly required for an application of this size, the project implements an **advanced state management pattern** using Redux Toolkit and Redux-Saga. This choice was made to ensure clean handling of AJAX requests to the API and to demonstrate a scalable and maintainable architecture that facilitates future extension and robust feature development.
 
 ## ✅ Features & Functionality
