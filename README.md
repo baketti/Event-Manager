@@ -16,6 +16,64 @@ The backend is powered by `json-server`, simulating a RESTful API for developmen
 
 > ⚠️ This project is for **demonstration purposes only**, created to showcase proficiency with React and frontend architecture. It is a **simple demo project**, and all the data used is for **testing only** — not real or accurate. The UI is designed to be clean and functional. I apologize if some event images are not realistic — they are merely placeholders.
 
+## ✅ Features & Functionality
+
+### 🔐 Authentication & Role Management
+The application supports user authentication with role-based access control:
+- **Users** have limited permissions:
+  - View all public events
+  - Create new events
+  - Subscribe/unsubscribe to events (as participants)
+- **Admins** have full access:
+  - All user permissions
+  - Manage all events (edit/delete)
+  - Manage users (view, create, edit, delete)
+  - Admins **cannot** subscribe to events (the button is disabled for them)
+
+Each user is assigned a role (`user` or `admin`) upon creation.
+
+---
+
+### 🧾 Forms & Modals
+
+The application includes various forms and dialog modals for CRUD operations:
+
+#### 📄 Event Management
+- **Create Event**: Modal dialog with form fields
+- **Edit Event**: Modal dialog pre-filled with current event data
+- **Delete Event**: Confirmation dialog before deletion
+
+#### 👤 User Management (Admins Only)
+- **Create User**: Modal dialog with fields for name, email, password, role
+- **Edit User**: Modal dialog pre-filled with current user data
+- **Delete User**: Confirmation dialog to confirm deletion
+
+#### 🔐 Authentication
+- **Login Form**: Allows users to sign in
+- **Registration Form**: Allows users to register a new account
+
+All forms include validation and real-time feedback using `react-hook-form` and `yup`.
+
+---
+
+### 🔎 Events Filtering & Search
+
+The Events Scene includes advanced filtering capabilities:
+- **Location** – Filters events by city/location
+- **Price** – Filters events by maximum price (returns events with price ≤ selected value)
+- **Date** – Filters events by exact date match
+
+> ⚠️ **Note on Date Search**:
+Due to limitations with `json-server`, range-based date filters (like `date_gte`, `date_lte`) are not currently supported.
+Instead, a strict `date` query is used, returning only events with a date **exactly matching** the selected one.
+This may result in **zero or very few matches** depending on the selected day.
+
+> 🔍 **Important**: The search is triggered **only when clicking the search icon button** to the right of the filters.
+
+---
+
+This set of features ensures a complete event management experience, with secure and intuitive role-based access control and full CRUD support for both users and events.
+
 ## 🚀 Project Setup & Installation
 
 To run the Event Manager application locally, follow these steps:
@@ -100,7 +158,7 @@ Password: mario123
 - **index.tsx** - Application entry point and root component
 - **redux-store/** - Redux state management configuration and slices
 - **router/** - React Router setup and navigation logic
-- **scenes/** - Main application pages/screens
+- **scenes/** - Main application pages
 
 ### State Management (`src/app/redux-store/`)
 - **extra-actions/** - Redux actions for API calls and lifecycle events
@@ -126,7 +184,7 @@ Password: mario123
 - **LandingPageScene** - Homepage with app introduction
 - **AuthenticationScene** - Authentication wrapper
 - **LoginScene** / **RegistrationScene** - User authentication pages
-- **DashboardScene** - Main dashboard after login
+- **DashboardScene** - Main dashboard wrapper after login
 - **EventsScene** - Events listing with search and filters
 - **EventDetailsScene** - Individual event details page
 - **UsersScene** - User management (admin only)
@@ -139,10 +197,6 @@ Password: mario123
 - **hooks/** - Custom React hooks for shared logic
 - **themes/** - Material-UI theme configuration
 - **utils/** - Utility functions and constants
-
-### Development Tools
-- **main.tsx** - React application entry point
-- **vite-env.d.ts** - Vite environment type definitions
 
 This structure follows a feature-based organization with clear separation of concerns, making the codebase maintainable and scalable.
 
@@ -261,61 +315,4 @@ All components in the application follow a consistent two-file architecture patt
 
 This pattern ensures that components remain focused, maintainable, and follow React best practices while keeping business logic separate from presentation concerns. 
 
-## ✅ Features & Functionality
-
-### 🔐 Authentication & Role Management
-The application supports user authentication with role-based access control:
-- **Users** have limited permissions:
-  - View all public events
-  - Create new events
-  - Subscribe/unsubscribe to events (as participants)
-- **Admins** have full access:
-  - All user permissions
-  - Manage all events (edit/delete)
-  - Manage users (view, create, edit, delete)
-  - Admins **cannot** subscribe to events (the button is disabled for them)
-
-Each user is assigned a role (`user` or `admin`) upon creation.
-
----
-
-### 🧾 Forms & Modals
-
-The application includes various forms and dialog modals for CRUD operations:
-
-#### 📄 Event Management
-- **Create Event**: Modal dialog with form fields
-- **Edit Event**: Modal dialog pre-filled with current event data
-- **Delete Event**: Confirmation dialog before deletion
-
-#### 👤 User Management (Admins Only)
-- **Create User**: Modal dialog with fields for name, email, password, role
-- **Edit User**: Modal dialog pre-filled with current user data
-- **Delete User**: Confirmation dialog to confirm deletion
-
-#### 🔐 Authentication
-- **Login Form**: Allows users to sign in
-- **Registration Form**: Allows users to register a new account
-
-All forms include validation and real-time feedback using `react-hook-form` and `yup`.
-
----
-
-### 🔎 Events Filtering & Search
-
-The Events Scene includes advanced filtering capabilities:
-- **Location** – Filters events by city/location
-- **Price** – Filters events by maximum price (returns events with price ≤ selected value)
-- **Date** – Filters events by exact date match
-
-> ⚠️ **Note on Date Search**:
-Due to limitations with `json-server`, range-based date filters (like `date_gte`, `date_lte`) are not currently supported.
-Instead, a strict `date` query is used, returning only events with a date **exactly matching** the selected one.
-This may result in **zero or very few matches** depending on the selected day.
-
-> 🔍 **Important**: The search is triggered **only when clicking the search icon button** to the right of the filters.
-
----
-
-This set of features ensures a complete event management experience, with secure and intuitive role-based access control and full CRUD support for both users and events.
 
