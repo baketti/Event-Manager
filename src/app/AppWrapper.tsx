@@ -9,9 +9,7 @@ const AppWrapper = () => {
   return (
     <Provider store={store}>
       <PersistGate loading={<div />} persistor={persistor}>
-        {/*<Helmet>*/}
           <title>Event Manager</title>
-        {/*</Helmet>*/}
         <App />
       </PersistGate>
     </Provider>
