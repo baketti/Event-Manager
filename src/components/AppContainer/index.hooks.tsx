@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from "react";
+import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import domNavigation from "@/models/DomNavigation";
 
@@ -6,9 +6,7 @@ export const useAppContainer = () => {
     const navigate = useNavigate();
 
     const location = useLocation(); 
-    const isLandingPage = useMemo(() => {
-      return location.pathname === "/";
-    }, [location.pathname]);
+    const isLandingPage = location.pathname === "/";
        
 
     useEffect(() => {
