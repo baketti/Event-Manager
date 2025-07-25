@@ -8,7 +8,6 @@ const initialState: EventState = {
   editEventId: null,
   currentEvent: null,
   eventsList: [],
-  queryFilters: {},
 };
 
 export const eventStore = createSlice({
@@ -24,18 +23,6 @@ export const eventStore = createSlice({
     resetCurrentEvent: (state) => {
       state.currentEvent = null;
     },
-    setQueryFilters: (
-      state, { payload }:PayloadAction<{
-        title?: string;
-        date?: string;
-        location?: string;
-        price?: number;
-      }>) => {
-      state.queryFilters = payload;
-    },
-    resetQueryFilters: (state) => {
-      state.queryFilters = {};
-    }
   },
   extraReducers: (builder) => {
     builder.addCase(extraActions.getEvents.success, (state, action) => {
