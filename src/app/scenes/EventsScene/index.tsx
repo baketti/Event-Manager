@@ -3,7 +3,7 @@ import {
   Box,
   Stack,
   CircularProgress,
-  IconButton,
+  //IconButton,
   Tooltip,
   Button,
   Typography,
@@ -11,7 +11,6 @@ import {
 import { useEventsScene } from "./index.hooks";
 import { EventsList } from "@/components/EventsList";
 import { FormProvider } from "react-hook-form";
-import SearchIcon from "@mui/icons-material/Search";
 import AddIcon from "@mui/icons-material/Add";
 import { ErrorMessage } from "@/components/ErrorMessage";
 import { ScrollToTopButton } from "@/components/ScrollToTopButton";
@@ -25,9 +24,8 @@ export const EventsScene = memo(() => {
     isAdmin,
     eventsList,
     isEventsListLoading,
+    isEventsSearchLoading,
     formData,
-    triggerSubmit,
-    submitDisabled,
     handleOpenCreateEventDialog,
     locationsOptions,
     handleResetAllEvents,
@@ -71,7 +69,7 @@ export const EventsScene = memo(() => {
           </Button>
         )}
         <FormProvider {...formData}>
-          <form onSubmit={triggerSubmit} style={{ width: "100%" }}>
+          <form style={{ width: "100%" }}>
             <Stack
               direction="row"
               spacing={1}
@@ -89,20 +87,10 @@ export const EventsScene = memo(() => {
               />
               <FormTextField name='price' label='Price' type='number' />
               <FormDatePicker name='date' label='Date' />
-              <Tooltip title="Search">
-                <IconButton
-                  type="submit"
-                  aria-label="search"
-                  size="large"
-                  disabled={submitDisabled}
-                >
-                  <SearchIcon />
-                </IconButton>
-              </Tooltip>
             </Stack>
           </form>
         </FormProvider>
-        {isEventsListLoading ? (
+        {isEventsListLoading || isEventsSearchLoading ? (
           <Box
             sx={{
               width: "100%",
@@ -116,7 +104,7 @@ export const EventsScene = memo(() => {
           </Box>
         ) : (
           <>
-            {eventsList?.length > 0? (
+            {eventsList?.length > 0 ? (
               <EventsList eventsList={eventsList} />
             ) : (
               <ErrorMessage color="grey">

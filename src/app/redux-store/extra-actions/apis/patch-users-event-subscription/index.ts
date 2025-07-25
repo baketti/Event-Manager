@@ -23,7 +23,7 @@ export default apiActionBuilder<
   >,
   ApiFailAction<PatchUserEventSubscriptionParams>
 >(
-  "apis/users/{userId}/patch",
+  "apis/users/{userId}/event/sub/patch",
   (
     params: PatchUserEventSubscriptionParams,
     options?: ApiRequestPayloadBuilderOptions,

@@ -8,6 +8,7 @@ import { actions, selectors } from "@/app/redux-store";
 import { DialogTypes } from "@/app/redux-store/slices/ui/ui.interfaces";
 import moment, { Moment } from "moment";
 import { locations } from "@/utils";
+import { useSearchParams } from "react-router-dom";
 
 type FormSearchEventsData = {
   location?: string;
@@ -34,6 +35,8 @@ const schema = yup.object().shape({
 
 export const useEventsScene = () => {
   const [resetEventsDisabled, setResetEventsDisabled] = useState(true);
+  const [searchParams, setSearchParams] = useSearchParams()
+
   const dispatch = useDispatch();
 
   const isAdmin = useSelector(selectors.getIsAdmin);
@@ -42,13 +45,18 @@ export const useEventsScene = () => {
     dispatch(actions.getEvents.request({}));
     return () => {
       dispatch(actions.resetEventsList());
-      dispatch(actions.resetQueryFilters());
+      setSearchParams({});
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch]);
 
   const isEventsListLoading = useSelector(
     selectors.getAjaxIsLoadingByApi(actions.getEvents.api)
   );
+
+  const isEventsSearchLoading = useSelector(
+    selectors.getAjaxIsLoadingByApi(actions.getEventsBySearch.api)
+  );  
 
   const eventsList = useSelector(selectors.getEventsList);
 
@@ -63,13 +71,7 @@ export const useEventsScene = () => {
     defaultValues,
   });
 
-  const {
-    handleSubmit,
-    reset,
-    formState: { isValid, isSubmitted },
-  } = formData;
-
-  const queryFilters = useSelector(selectors.getQueryFilters);
+  const { reset } = formData;
 
   const watchedValues = useWatch({
     control: formData.control,
@@ -87,27 +89,18 @@ export const useEventsScene = () => {
         return acc;
       }, {}
     );
-    if (Object.keys(filteredValues).length > 0) {
-      dispatch(actions.setQueryFilters(filteredValues));
-    } else {
-      dispatch(actions.setQueryFilters({}));
-    }
-  }, [watchedValues, dispatch]);
-
-  const hasFilters = useMemo(() => {
-    return !!Object?.keys(queryFilters || {}).length;
-  }, [queryFilters]);
-
-  const submitDisabled = (isSubmitted && !isValid) || !hasFilters;
     
-  const triggerSubmit = useMemo(
-    () =>
-      handleSubmit(() => {
-        dispatch(actions.getEventsBySearch.request({ ...queryFilters }));
-        setResetEventsDisabled(false);
-      }),
-    [handleSubmit, dispatch, queryFilters]
-  );
+    setSearchParams(filteredValues);
+  }, [watchedValues, setSearchParams]);
+  
+  useEffect(() => {
+    const params = Object.fromEntries(searchParams.entries());
+    
+    if (Object.keys(params).length > 0) {
+      dispatch(actions.getEventsBySearch.request(params));
+      setResetEventsDisabled(false);
+    }
+  }, [searchParams, dispatch]);
 
   useEffect(() => {
     reset(defaultValues);
@@ -128,7 +121,6 @@ export const useEventsScene = () => {
   }), []);
 
   const handleResetAllEvents = useCallback(() => {
-    dispatch(actions.resetQueryFilters());
     reset(defaultValues);
     dispatch(actions.getEvents.request({}));
     setResetEventsDisabled(true);
@@ -138,9 +130,8 @@ export const useEventsScene = () => {
     isAdmin,
     eventsList,
     isEventsListLoading,
+    isEventsSearchLoading,
     formData,
-    triggerSubmit,
-    submitDisabled,
     handleOpenCreateEventDialog,
     locationsOptions,
     handleResetAllEvents,
